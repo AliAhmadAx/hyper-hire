@@ -1,0 +1,18 @@
+{
+  "Home": {
+    "navigation": {
+      "employment": "employment",
+      "overseas": "Overseas developer utilization service",
+      "contact": "Contact Us"
+    },
+    "empDropdown": {
+      "title": "employment",
+      "recruitment": "Remote recruitment of overseas developers",
+      "foreigners": "Remote recruitment of foreigners (non-development occupations)",
+      "koreanSpeakers": "Hiring foreigners who can speak Korean"
+    },
+    "footer": {
+      "description": "We match the best talent across national barriers."
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "Home": {
+    "navigation": {
+      "employment": "채용",
+      "overseas": "해외 개발자 활용 서비스",
+      "contact": "문의하기"
+    },
+    "empDropdown": {
+      "title": "채용",
+      "recruitment": "해외 개발자 원격 채용",
+      "foreigners": "외국인 원격 채용 (비개발 직군)",
+      "koreanSpeakers": "한국어 가능 외국인 채용"
+    },
+    "footer": {
+      "description": "우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다."
+    }
+  }
+}
