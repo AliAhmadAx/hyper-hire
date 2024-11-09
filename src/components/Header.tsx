@@ -60,7 +60,7 @@ export default function Header() {
 
         {/* CTA BUTTON  */}
         <div className="w-1/3 hidden lg:flex items-center justify-center ">
-          <button className="bg-white rounded-lg text-[#4A77FF] px-10 py-3">
+          <button className="bg-white hover:bg-white/80 rounded-lg text-[#4A77FF] px-10 py-3">
             문의하기
           </button>
         </div>
