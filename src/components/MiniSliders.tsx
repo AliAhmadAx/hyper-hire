@@ -15,6 +15,9 @@ export const MiniSlider = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
+  // Duplicate the miniCardsData to create a continuous loop
+  const extendedCards = [...miniCardsData, ...miniCardsData];
+
   useEffect(() => {
     if (miniCardsData.length === 0) return;
 
@@ -38,9 +41,9 @@ export const MiniSlider = ({
     <div className="w-full h-full overflow-x-hidden overflow-y-hidden relative">
       <div
         ref={sliderRef}
-        className={`min-w-fit flex space-x-5 transition-transform duration-500  `}
+        className="min-w-fit flex space-x-5 transition-transform duration-500"
       >
-        {miniCardsData.map((card: MiniCard, index: number) => (
+        {extendedCards.map((card: MiniCard, index: number) => (
           <div
             key={index}
             className={`px-5 flex items-center space-x-5 w-[332px] h-[88px] rounded-xl bg-white/20 ${

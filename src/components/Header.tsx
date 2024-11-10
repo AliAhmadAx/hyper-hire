@@ -5,8 +5,8 @@ import { useState } from "react";
 export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   return (
-    <header>
-      <div className="w-screen px-5 lg:px-10 py-10 lg:py-5 flex items-center justify-between fixed top-0 text-lg text-white font-semibold z-10">
+    <header className="w-screen flex items-center justify-center">
+      <div className="w-full lg:w-5/6 px-5 lg:px-0 py-10 lg:py-5 flex items-center justify-between fixed top-0 text-lg text-white font-semibold z-10">
         {/* LOGO  */}
         <div className="w-1/3 flex items-center">
           <Image
@@ -59,8 +59,8 @@ export default function Header() {
         </div>
 
         {/* CTA BUTTON  */}
-        <div className="w-1/3 hidden lg:flex items-center justify-center ">
-          <button className="bg-white hover:bg-white/80 rounded-lg text-[#4A77FF] px-10 py-3">
+        <div className="w-1/3 hidden lg:flex items-center justify-end ">
+          <button className="bg-white rounded-lg text-[#4A77FF] px-10 py-3">
             문의하기
           </button>
         </div>

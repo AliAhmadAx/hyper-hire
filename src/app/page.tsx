@@ -14,18 +14,14 @@ export default async function Home() {
   const res = await fetch(`${protocol}://${domain}/api/heroSection`);
   const data = await res.json();
 
-  const heroData = data?.headings || "";
-  const advantagesData = data?.advantages || "";
-  const slideShowData = data?.slideshow || "";
-  const miniCardsData = data?.miniCards || "";
-  const checkboxesData = data?.checkboxes || "";
+  const { headings, advantages, slideshow, miniCards, checkboxes } = data;
 
   return (
-    <div className="background w-screem overflow-x-hidden min-h-screen py-10 lg:py-20 lg:px-10 backdrop-blur-xl">
+    <div className="background w-screem flex flex-col items-center overflow-x-hidden min-h-screen py-10 lg:py-20 backdrop-blur-xl">
       {/* MAIN CENTERAL SECTION  */}
-      <div className="w-full min-h-[60vh] flex flex-col lg:flex-row justify-center lg:items-center mt-20 ">
+      <div className="w-full lg:w-5/6 min-h-[60vh] flex flex-col lg:flex-row justify-center lg:items-center mt-20 ">
         {/* LEFT HAND SIDE WITH TITLE AND DESC  */}
-        {!heroData ? (
+        {!headings ? (
           <div className="w-1/2 min-h-[60vh] flex flex-col justify-center items-center lg:pr-10 text-white font-extrabold z-10 ">
             <DotLoader color="#ffffff" />
             <h1 className="text-xl">Loading..</h1>
@@ -34,52 +30,52 @@ export default async function Home() {
           <div className="w-full lg:w-1/2 lg:min-h-[60vh] flex flex-col justify-center px-5 lg:px-0 lg:pr-10 text-white font-extrabold z-10 ">
             {/* BUBBLE  */}
             <Image
-              src={heroData.tooltip}
+              src={headings.tooltip}
               alt="bubble icon with text above main hero section heading"
               width={150}
               height={48}
-              className={`${heroData ? "fade-in-3s" : ""} `}
+              className={`${headings ? "fade-in-3s" : ""} `}
             />
 
             {/* TITLE  */}
             <span className="text-[32px] lg:text-[48px] py-5 fade-in-up">
-              <h1>{heroData.subtitle1}</h1>
-              <h1>{heroData.title2}</h1>
+              <h1>{headings.subtitle1}</h1>
+              <h1>{headings.title2}</h1>
             </span>
 
             {/* DESCRIPTION  */}
             <span className="text-[24px] text-white/90 fade-in-up">
-              <h2 className="mt-0 lg:mt-5">{heroData.subtitle1}</h2>
-              <h2>{heroData.subtitle2}</h2>
+              <h2 className="mt-0 lg:mt-5">{headings.subtitle1}</h2>
+              <h2>{headings.subtitle2}</h2>
             </span>
 
             {/* CTA  */}
             <span className="hidden lg:block text-[18px] fade-in-up">
-              <button className="underline mt-5">{heroData.cta}</button>
+              <button className="underline mt-5">{headings.cta}</button>
             </span>
 
             {/* 3 CARDS  */}
-            <HeroCard advantages={advantagesData} />
+            <HeroCard advantages={advantages} />
           </div>
         )}
 
         {/* RIGHT HAND SIDE WITH SLIDE SHOW  */}
-        <div className="w-full lg:w-1/2 h-[500px] flex flex-col items-center z-10">
-          <SlideshowCard slideShowData={slideShowData} />
+        <div className="w-full lg:w-1/2 h-[500px] flex flex-col z-10">
+          <SlideshowCard slideShowData={slideshow} />
         </div>
       </div>
 
       {/* SLIDER SECTIONH  */}
       <div className="hidden lg:block w-full mt-20">
-        <MiniSlider miniCardsData={miniCardsData} />
+        <MiniSlider miniCardsData={miniCards} />
       </div>
 
-      <div className="w-full h-full mt-24 block lg:hidden">
-        <Checkbox checkboxesData={checkboxesData} />
+      <div className="w-full lg:w-5/6 h-full mt-24 block lg:hidden">
+        <Checkbox checkboxesData={checkboxes} />
 
         {/* CTA  */}
         <span className="lg:hidden text-[18px] fade-in-up px-3 text-[#FBFF23] font-extrabold">
-          <button className="underline mt-5">{heroData && heroData.cta}</button>
+          <button className="underline mt-5">{headings && headings.cta}</button>
         </span>
       </div>
     </div>

@@ -37,7 +37,7 @@ export async function GET() {
     {
       profileImageUrl:
         "https://images.unsplash.com/photo-1730882884953-378e5349a0a8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Abhishek Gupta",
+      name: "Dmo 1",
       designation: "마케팅",
       exp: "2y+",
       skills: [
@@ -50,7 +50,7 @@ export async function GET() {
     {
       profileImageUrl:
         "https://images.unsplash.com/photo-1730882884953-378e5349a0a8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Abhishek Gupta",
+      name: "Demo 2",
       designation: "마케팅",
       exp: "2y+",
       skills: [
@@ -63,7 +63,7 @@ export async function GET() {
     {
       profileImageUrl:
         "https://images.unsplash.com/photo-1730882884953-378e5349a0a8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Abhishek Gupta",
+      name: "Demo 3",
       designation: "마케팅",
       exp: "2y+",
       skills: [

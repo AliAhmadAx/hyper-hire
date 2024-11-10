@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="w-full bg-[#FBFBFB] py-14 lg:py-20 px-3 lg:px-20 text-sm text-[#343741] font-extrabold">
+    <footer className="w-full flex items-center justify-center">
+      <div className="w-full lg:w-5/6 bg-[#FBFBFB] py-14 lg:py-20 px-3 lg:px-0 text-sm text-[#343741] font-extrabold">
         {/* MAIN DIV 1  */}
         <div className="w-full flex flex-wrap">
           {/* INNER DIV 1 */}
