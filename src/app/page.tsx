@@ -5,17 +5,24 @@ import { MiniSlider } from "@/components/MiniSliders";
 import { DotLoader } from "react-spinners";
 import { Checkbox } from "@/components/Checkbox";
 
-const apiUrl = process.env.API_URL || "http://localhost:3000/api";
+const apiUrl = process.env.API_URL;
 export default async function Home() {
-  const res = await fetch(`${apiUrl}/heroSection`);
+  if (apiUrl === undefined) {
+    return (
+      <div>
+        <h1>Opps Error!</h1>
+      </div>
+    );
+  }
 
+  const res = await fetch(`${apiUrl}/heroSection`);
   const data = await res.json();
 
-  const heroData = data.headings;
-  const advantagesData = data.advantages;
-  const slideShowData = data.slideshow;
-  const miniCardsData = data.miniCards;
-  const checkboxesData = data.checkboxes;
+  const heroData = data?.headings || "";
+  const advantagesData = data?.advantages || "";
+  const slideShowData = data?.slideshow || "";
+  const miniCardsData = data?.miniCards || "";
+  const checkboxesData = data?.checkboxes || "";
 
   return (
     <div className="background w-screem overflow-x-hidden min-h-screen py-10 lg:py-20 lg:px-10 backdrop-blur-xl">
