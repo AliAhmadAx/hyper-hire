@@ -4,18 +4,14 @@ import { SlideshowCard } from "@/components/SlideshowCard";
 import { MiniSlider } from "@/components/MiniSliders";
 import { DotLoader } from "react-spinners";
 import { Checkbox } from "@/components/Checkbox";
+import { headers } from "next/headers";
 
-const apiUrl = process.env.API_URL;
 export default async function Home() {
-  if (apiUrl === undefined) {
-    return (
-      <div>
-        <h1>Opps Error!</h1>
-      </div>
-    );
-  }
+  const headersList = headers();
+  const domain = headersList.get("x-forwarded-host") || "";
+  const protocol = headersList.get("x-forwarded-proto") || "";
 
-  const res = await fetch(`${apiUrl}/heroSection`);
+  const res = await fetch(`${protocol}://${domain}/api/heroSection`);
   const data = await res.json();
 
   const heroData = data?.headings || "";
