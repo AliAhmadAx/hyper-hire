@@ -5,8 +5,9 @@ import { MiniSlider } from "@/components/MiniSliders";
 import { DotLoader } from "react-spinners";
 import { Checkbox } from "@/components/Checkbox";
 
+const apiUrl = process.env.API_URL || "http://localhost:3000/api";
 export default async function Home() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/heroSection`);
+  const res = await fetch(`${apiUrl}/heroSection`);
 
   const data = await res.json();
 
