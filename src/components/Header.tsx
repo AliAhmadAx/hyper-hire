@@ -1,28 +1,9 @@
 "use client";
 import Image from "next/image";
 import ArrowDown from "../../public/assets/ArrowDown.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
-
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 80) {
-        // Change 50 to whatever scroll position you want
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header className="w-screen flex items-center justify-center">
