@@ -21,7 +21,7 @@ export const Checkbox = async ({
             <div className="bg-white rounded-lg p-2 flex items-center justify-center mr-3">
               {data.checked ? (
                 <Image
-                  src={"/assets/Check.svg"}
+                  src={"/assets/check.svg"}
                   alt="checkbox icon"
                   width={14}
                   height={14}
